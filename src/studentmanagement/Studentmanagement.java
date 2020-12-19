@@ -20,6 +20,7 @@ while(1>0)
             System.out.println("3.Delete \n");
                 System.out.println("4.Update \n");
                     System.out.println("5.Exit \n");
+                    
     System.out.println("Press Number :  ");                
     int n = sc.nextInt();
     if(n == 1)

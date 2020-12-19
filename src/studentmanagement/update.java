@@ -48,25 +48,24 @@ public class update {
         
         
         
-        //("UPDATE studentinfo SET cgpa ='?' WHERE Name='2';")
-        PreparedStatement stmt = connect.prepareStatement("UPDATE studentinfo SET cgpa=?  WHERE Name=?;");
+
+        PreparedStatement ps = connect.prepareStatement("UPDATE studentinfo SET cgpa=?  WHERE Name=?;");
         
-        //PreparedStatement stmt = connect.prepareStatement("INSERT INTO studentinfo VALUES(?,?,?,?,?,?,?,?);");
-        stmt.setString(1, Cgpa);
-        stmt.setString(2, Name );
+
+        ps.setString(1, Cgpa);
+        ps.setString(2, Name );
 
         
         
         
         
-        stmt.execute();
+        ps.execute();
         
         
         
         
         
-        System.out.println("Update Successful!");
-        //System.out.println("");
+        System.out.println("Update Successful ");
         
       } catch (SQLException e) {
        System.out.println(e.getMessage());

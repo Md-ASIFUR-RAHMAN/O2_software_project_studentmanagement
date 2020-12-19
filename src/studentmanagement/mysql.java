@@ -27,8 +27,6 @@ public class mysql {
         try {
             connect = APIclient.getInstance();
             sc = new Scanner(System.in);
-            //statement = connect.createStatement();
-            //result = statement.executeQuery("SELECT * FROM student_management.studentinfo");
             
             
             PreparedStatement = connect.prepareStatement("SELECT name,age,gender,cgpa FROM studentinfo WHERE name = ?;");

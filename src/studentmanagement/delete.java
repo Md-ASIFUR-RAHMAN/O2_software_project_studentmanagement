@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package studentmanagement;
 
 import java.sql.Connection;
@@ -38,33 +34,28 @@ public class delete {
             
             
             
-        System.out.println("ID : ");
-        int id = sc.nextInt();
-        //System.out.println("Name For Delete Info : ");
-        //String Name = sc.next();
+        System.out.println("Name : ");
+        String name = sc.next();
+        
+
         
         
         
+        PreparedStatement ps = connect.prepareStatement("DELETE FROM  studentinfo WHERE name =?;");
         
-        PreparedStatement stmt = connect.prepareStatement("DELETE FROM  studentinfo WHERE id =?;");
-        
-        //PreparedStatement stmt = connect.prepareStatement("INSERT INTO studentinfo VALUES(?,?,?,?,?,?,?,?);");
-        //stmt.setInt(1, Code);
-        //stmt.setString(1, Name);
-        stmt.setInt(1,id);
+        ps.setString(1,name);
 
         
         
         
         
-        stmt.execute();
+        ps.execute();
         
         
         
         
         
-        System.out.println("Delete Successful!");
-        //System.out.println("");
+        System.out.println("Delete Successful ");
         
       } catch (SQLException e) {
        System.out.println(e.getMessage());
